@@ -1,0 +1,77 @@
+description: This API provides management information for where-server.
+scope:
+- name: apps
+  method: [GET]
+  schema:
+    title: apps
+    description: Retrieve the list of available where-server apps
+    type: array
+    items:
+      type: object
+      properties:
+        app:
+          description: App name
+          type: string
+          readOnly: true
+        url:
+          description: App URL
+          type: object
+          readOnly: true
+          properties:
+            v1:
+              type: string
+              format: uri
+            v2:
+              type: string
+              format: uri
+
+- name: status
+  method: [GET]
+  schema:
+    title: status
+    description: Retrieve where server status information
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          description: Server name
+          type: string
+          readOnly: true
+        version:
+          description: Server version 
+          type: string
+          readOnly: true
+        mode:
+          description: Server operating mode
+          type: string
+          enum: [development, test, stating, production]
+          readOnly: true
+        total:
+          description: Number of running apps
+          type: integer
+          readOnly: true
+        uptime:
+          description: Uptime in seconds
+          type: integer
+          readOnly: true
+        rss:
+          description: Resident set size in bytes
+          type: integer
+          readOnly: true
+        heapTotal:
+          description: Total heap size in bytes
+          type: integer
+          readOnly: true
+        heapUsed:
+          description: Used heap size in bytes
+          type: integer
+          readOnly: true
+        external:
+          description: Memory used by C++ objects in bytes
+          type: integer
+          readOnly: true
+        arrayBuffers:
+          description: Memory used by ArrayBuffers in bytes
+          type: integer
+          readOnly: true

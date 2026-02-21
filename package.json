@@ -1,0 +1,38 @@
+{
+  "name": "@where-org/where-server",
+  "version": "2.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Masafumi Sasahara <masafumi@sashara.io> (https://github.com/masafumi-sasahara/)",
+  "homepage": "https://where-org.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/where-org/where-server.git"
+  },
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "imports": {
+    "#module/*": "./lib/module/*/index.js"
+  },
+  "bin": {
+    "where-server": "./bin/where-server.js"
+  },
+  "scripts": {
+    "start": "NODE_ENV=$npm_config_mode node ./bin/where-server.js ./config",
+    "dev": "NODE_ENV=$npm_config_mode node --watch ./bin/where-server.js ./config"
+  },
+  "dependencies": {
+    "@where-org/where-common": "^2.0.0",
+    "express": "^5.2.1",
+    "express-ipfilter": "^1.4.0",
+    "jose": "^6.1.3",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "nanoid": "^5.1.6",
+    "node-2fa": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
+  }
+}

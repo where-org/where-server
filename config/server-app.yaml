@@ -1,0 +1,22 @@
+server:
+
+  allow:
+  - { range: 127.0.0.1 }
+
+  logging:
+    { scope: status, skip: true }
+
+  app:
+    module: '#module/where-server-app-server-information'
+
+  auth: null
+
+doc:
+
+  allow:
+  - { range: 127.0.0.1 }
+
+  app:
+    module: '#module/where-server-app-documents'
+
+  auth: null

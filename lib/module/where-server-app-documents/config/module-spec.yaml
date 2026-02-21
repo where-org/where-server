@@ -1,0 +1,81 @@
+description: This API provides documentation for where-server.
+scope:
+- name: apps
+  method: [GET]
+  schema:
+    title: apps
+    description: Retrieve documentation for apps registered in where-server
+    type: array
+    items:
+      type: object
+      required: [app, description, scope]
+      additionalProperties: false
+      properties:
+
+        app:
+          description: App name
+          type: string
+          readOnly: true
+
+        description:
+          description: App description
+          type: string
+          readOnly: true
+
+        scope:
+          description: List of app scopes
+          type: array
+          items:
+            type: object
+            required: [name, schema, condition]
+            additionalProperties: false
+            properties:
+              name:
+                description: Scope name
+                type: string
+
+              method:
+                description: Supported HTTP methods
+                type: array
+                items:
+                  type: string
+                  enum: [GET, POST, PUT, DELETE]
+
+              schema:
+                description: Request and response schema in JSON Schema format
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                  x-scope-name:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  type:
+                    const: array
+                    type: string
+                  items:
+                    type: object
+
+              condition:
+                description: Query condition schema in JSON Schema format
+                type: object
+                properties:
+                  $schema:
+                    type: string
+                  x-scope-name:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  type:
+                    const: object
+                    type: string
+                  additionalProperties:
+                    const: false
+                    type: boolean
+                  properties:
+                    type: object
