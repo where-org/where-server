@@ -15,15 +15,12 @@
   "imports": {
     "#module/*": "./lib/module/*/index.js"
   },
-  "bin": {
-    "where-server": "./bin/where-server.js"
-  },
   "scripts": {
     "start": "NODE_ENV=$npm_config_mode node ./bin/where-server.js ./config",
     "dev": "NODE_ENV=$npm_config_mode node --watch ./bin/where-server.js ./config"
   },
   "dependencies": {
-    "@where-org/where-common": "^2.0.0",
+    "@where-org/where-common": "^2.0.1",
     "express": "^5.2.1",
     "express-ipfilter": "^1.4.0",
     "jose": "^6.1.3",

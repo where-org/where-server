@@ -6,11 +6,11 @@ http:
 
 api:
   version:
-    - v2
+  - v2
 
 cors:
   origin:
-    - http://localhost:5570
+  - http://localhost:5570
 
 token:
   mode: symmetric
