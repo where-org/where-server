@@ -1,4 +1,4 @@
-
+{
   "name": "@where-org/where-server",
   "version": "2.0.2",
   "description": "A REST API server driven by extensible modules",
