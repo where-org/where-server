@@ -1,24 +1,67 @@
+# examples:
+#  allow: array
+#  - { range: 127.0.0.1 }
+#  - { scope: status, range: 127.0.0.1 }
+#  - { scope: [apps, status], range: 127.0.0.1 }
+# 
+#   logging: object
+#     { skip: true }
+#     { scope: status, skip: true }
+#     { scope: [apps, status], skip: true }
 server:
 
   allow:
-  - range: 127.0.0.1
+  - { range: 127.0.0.1 }
 
   logging:
-    scope: status
-    skip: true
+    { scope: status, skip: true }
 
   app:
     module: '#module/where-server-app-server-information'
-
-  auth: null
 
 ---
 doc:
 
   allow:
-  - range: 127.0.0.1
+  - { range: 127.0.0.1 }
 
   app:
     module: '#module/where-server-app-documents'
 
   auth: null
+
+#---
+#example:
+  #app:
+    #module: '@where-org/where-server-app-example'
+    #credential: {}
+
+  #auth:
+    #module: '@where-org/where-server-auth-example/token'
+
+    #meta: 
+      #credential: credential
+      #defaultscope:
+        #- '*'
+
+    #credential:
+      #secret: secret
+      #expiresIn: 5s 
+      #refreshExpiresIn: 7d
+      #issuer: http://localhost:5570/where
+      #audience: http://localhost:5570/where
+
+---
+example2:
+  app:
+    module: '@where-org/where-server-app-example'
+    credential: {}
+
+  auth:
+    module: '@where-org/where-server-auth-example/apikey'
+    #meta: 
+      #credential: credential
+      #defaultscope:
+        #- '*'
+
+    credential: {}

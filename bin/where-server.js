@@ -18,9 +18,14 @@ const main = async (dir) => {
   // config
   const serverConfig = await where.loadConfig(dir);
 
-  const serverAppConfig = Object.entries(serverConfig.app).reduce((o, [k, v]) => (
-    { ...o, [k]: { ...v, importPath: resolve(v.app.module) } }
-  ), {});
+  const serverAppConfig = Object.entries(serverConfig.app).reduce((o, [k, v]) => {
+
+    const app = { ...v.app, importPath: resolve(v.app.module) },
+          auth = !v.auth ? v.auth : { ...v.auth, importPath: resolve(v.auth.module) };
+
+    return { ...o, [k]: { ...v, app, auth } };
+
+  }, {});
 
   const serverAppMergedConfig = await where.mergeSpec(serverAppConfig, serverConfig.spec);
 

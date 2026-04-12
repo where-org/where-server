@@ -10,7 +10,8 @@
     "url": "git+https://github.com/where-org/where-server.git"
   },
   "keywords": [
-    "where-server", "rest-api"
+    "where-server",
+    "rest-api"
   ],
   "type": "module",
   "main": "index.js",
@@ -23,7 +24,7 @@
     "dev": "NODE_ENV=$npm_config_mode node --watch ./bin/where-server.js ./config"
   },
   "dependencies": {
-    "@where-org/where-common": "^2.0.2",
+    "@where-org/where-common": "github:where-org/where-common",
     "express": "^5.2.1",
     "express-ipfilter": "^1.4.0",
     "jose": "^6.1.3",
