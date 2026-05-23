@@ -20,8 +20,8 @@
     "#module/*": "./lib/module/*/index.js"
   },
   "scripts": {
-    "start": "NODE_ENV=$npm_config_mode node --env-file=./.env ./bin/where-server.js ./config",
-    "dev": "NODE_ENV=$npm_config_mode node --env-file=./.env --watch ./bin/where-server.js ./config"
+    "start": "NODE_ENV=$npm_config_mode node --env-fil-if-existse=./.env ./bin/where-server.js ./config",
+    "dev": "NODE_ENV=$npm_config_mode node --env-file-if-exists=./.env --watch ./bin/where-server.js ./config"
   },
   "dependencies": {
     "@where-org/where-common": "^2.0.4",
