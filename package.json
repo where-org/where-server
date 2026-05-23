@@ -20,11 +20,11 @@
     "#module/*": "./lib/module/*/index.js"
   },
   "scripts": {
-    "start": "NODE_ENV=$npm_config_mode node ./bin/where-server.js ./config",
-    "dev": "NODE_ENV=$npm_config_mode node --watch ./bin/where-server.js ./config"
+    "start": "NODE_ENV=$npm_config_mode node --env-file=./.env ./bin/where-server.js ./config",
+    "dev": "NODE_ENV=$npm_config_mode node --env-file=./.env --watch ./bin/where-server.js ./config"
   },
   "dependencies": {
-    "@where-org/where-common": "github:where-org/where-common",
+    "@where-org/where-common": "file:../common",
     "express": "^5.2.1",
     "express-ipfilter": "^1.4.0",
     "jose": "^6.1.3",

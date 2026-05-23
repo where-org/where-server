@@ -64,6 +64,7 @@ const main = async (dir) => {
     });
 
   }
+
   httpServer.listen(port, bind, () => {
     ;;; where.log(`Listening on ${bind}:${port}`);
   });
