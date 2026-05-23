@@ -24,7 +24,7 @@
     "dev": "NODE_ENV=$npm_config_mode node --env-file=./.env --watch ./bin/where-server.js ./config"
   },
   "dependencies": {
-    "@where-org/where-common": "file:../common",
+    "@where-org/where-common": "^2.0.4",
     "express": "^5.2.1",
     "express-ipfilter": "^1.4.0",
     "jose": "^6.1.3",
